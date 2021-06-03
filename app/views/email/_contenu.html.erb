@@ -1,0 +1,8 @@
+<div style=" background-color:#EBF7FF;" id = "vide?">
+  <li class="list-group-item">Object : <%= @email.Object %> </li>
+    <tr></tr>
+  <li class="list-group-item">Body : <%= @email.Body %></li>
+
+  <%= link_to "Marquer comme non lu", email_path(),  method: :patch, class: "btn btn-success", remote: true%>
+  <%= link_to "Supprimer", email_path(),  method: :delete, class: "btn btn-danger", remote: true %>
+</div>

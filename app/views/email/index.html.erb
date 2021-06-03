@@ -1,0 +1,35 @@
+<div class="text-center">
+  <%= link_to "Recevoir un Email", email_index_path,  method: :post, class: "btn btn-primary", remote: true %>
+</div>
+
+<br><br>
+
+<div class="container row" style="margin-right:auto;margin-left:auto;">
+
+  <div class="col-6 list-group">
+      <li class="list-group-item active">Liste des Emails</li>
+</div>
+  <div class="col-6 list-group">
+    <li class="list-group-item active">Email selectionné</li>
+  </div>
+</div>
+
+<div class="container row" style="margin-right:auto;margin-left:auto;" id="email_object">
+
+
+    <div class="col-6 list-group ">
+      <% @emails.each do |t| %>
+      <li id ="email-<%= t.id %>"class="list-group-item">Object : <%= link_to (t.Object), email_path(t), remote: true%>
+        <% if t.read == false %>
+          <span id="badge-<%= t.id %>" class="badge badge-pill badge-success">Non-lu</span>
+        <%end%>
+      </li>
+
+        <%end%>
+    </div>
+    <div class="col-6 list-group" style=" background-color:#EBF7FF;" id="contenu_object">
+
+    </div>
+</div>
+
+
